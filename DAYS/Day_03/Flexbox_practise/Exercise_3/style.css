@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+#container {
+    display: flex;
+    width: 1500px;
+    text-align: center;
+    border: solid 3px rgb(255, 182, 173);
+    /* margin-top: 50px; */
+    margin: 50px 25px auto 25px;
+    padding: 30px 15px;
+    background-color: white;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    height: 60px;
+    background-color: rgb(107, 105, 236);
+}
+
+#team {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    height: 60px;
+    background-color: rgb(120, 172, 233);
+}
+
+#products {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    height: 60px;
+    background-color: rgb(224, 107, 117);
+}
+
+#logo-text, #team-text, #products-text {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+.container, .B, .C, .D {
+    border: solid 1px black;
+    position: relative;
+}
+
+.container {
+    width: 55vw;
+    height: 90vh;
+    margin: 10px auto;
+}
+
+.A {
+    border-bottom: solid 1px black;
+    background-color: white;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.B {
+   background-color: rgb(255, 162, 162);
+   display: inline-block;
+   width: 25%;
+   height: 20%;
+   margin-left: 20px;
+   margin-top: 50px;
+}
+
+.C {
+    background-color: rgb(169, 201, 250);
+    width: 65%;
+    height: 20%;
+    float: right;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+.D {
+    width: calc(100% - 40px);
+    height: 100px;
+    background-color: rgb(255, 241, 160);
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    margin: auto 20px auto 20px;
+    
+}
