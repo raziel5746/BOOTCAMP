@@ -1,0 +1,51 @@
+nav, nav a{
+    color: white;
+}
+
+#custom-jumbotron {
+    /* margin-top: 20vh; */
+    height: 80vh;
+    width: 100vw;
+    margin: 0;
+    background-color: black;
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top -100px left 0px;
+}
+
+#my-jumbotron {
+    padding-top: 30vh;
+    background: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+#my-jumbotron h1 {
+    font-weight: bold;
+
+}
+
+#job-links {
+    background-color: rgb(145, 209, 92);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#job-links > div {
+    border-right: 1px solid rgba(255, 255, 255, 0.342);
+    height: 100px;
+    text-align: center;
+    color: white;
+}
+
+#job-links img {
+    filter: invert(100%);
+}
+
+h1, h1 ~ p {
+    text-align: center;
+}
+
+#view-all-btn {
+    margin: auto;
+}
