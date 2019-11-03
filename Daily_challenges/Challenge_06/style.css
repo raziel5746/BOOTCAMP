@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+    background-color: gray;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    font-size: 50px;
+}
+
+#btn-C {
+    background-color: orange;
+}
+
+#btn-equal {
+    background-color: rgb(103, 204, 103);
+}
+
+h1 {
+    width: 100%;
+}
+
+#calcDisplay {
+    background-color: white;
+    width: 440px;
+    height: 80px;
+    margin: auto;
+    font-size: 60px;
+    line-height: 90px;
+}

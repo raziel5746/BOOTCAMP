@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Challenge 06</title>
+</head>
+<body>
+    <div id="calculator">
+        <div id="calcDisplay">0</div>
+        <div id="row1">
+            <button type="button" onclick="myFunction(7)">7</button>
+            <button type="button" onclick="myFunction(8)">8</button>
+            <button type="button" onclick="myFunction(9)">9</button>
+            <button type="button" onclick="myFunction('/')">/</button>
+        </div>
+        <div id="row2">
+            <button type="button" onclick="myFunction(4)">4</button>
+            <button type="button" onclick="myFunction(5)">5</button>
+            <button type="button" onclick="myFunction(6)">6</button>
+            <button type="button" onclick="myFunction('*')">x</button>
+        </div>
+        <div id="row3">
+            <button type="button" onclick="myFunction(1)">1</button>
+            <button type="button" onclick="myFunction(2)">2</button>
+            <button type="button" onclick="myFunction(3)">3</button>
+            <button type="button" onclick="myFunction('-')">-</button>
+        </div>
+        <div id="row4">
+            <button type="button" onclick="calcClear()" id="btn-C">C</button>
+            <button type="button" onclick="myFunction(0)">0</button>
+            <button type="button" onclick="result()" id="btn-equal">=</button>
+            <button type="button" onclick="myFunction('+')">+</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
