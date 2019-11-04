@@ -1,9 +1,6 @@
-// var calcArray = [];
 var calcString = "";
 
 function myFunction(btn){
-    // calcArray.push(btn);
-    // console.log(calcArray);
     calcString += btn;
     calcDisplay.innerHTML =  calcString;
     console.log(calcString);
@@ -12,8 +9,10 @@ function myFunction(btn){
 var calcDislpay = document.getElementById("calcDisplay");
 
 function result(){
-    calcDisplay.innerHTML =  eval(calcString);
-    calcString = eval(calcString);
+    var calcResult = eval(calcString);
+    calcDisplay.innerHTML = calcResult;
+    console.log(calcString + "=" + calcResult);
+    calcString = calcResult;
 }
 
 function calcClear(){
