@@ -1,0 +1,12 @@
+.btn {
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    background-image: url(images/back.jpg);
+    background-size: cover;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}

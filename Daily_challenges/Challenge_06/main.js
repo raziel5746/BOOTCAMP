@@ -1,4 +1,5 @@
 var calcString = "";
+var calcDislpay = document.getElementById("calcDisplay");
 
 function myFunction(btn){
     calcString += btn;
@@ -6,11 +7,10 @@ function myFunction(btn){
     console.log(calcString);
 }
 
-var calcDislpay = document.getElementById("calcDisplay");
 
 function result(){
     var calcResult = eval(calcString);
-    calcDisplay.innerHTML = calcResult;
+    calcDisplay.innerHTML = calcResult.toFixed(9);
     console.log(calcString + "=" + calcResult);
     calcString = calcResult;
 }

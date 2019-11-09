@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+}
+
+p {
+    margin-top: 60px;
+}
+
+button {
+    margin-bottom: 200px;
+}
+
+#addContestant {
+    margin-bottom: 0px;
+}

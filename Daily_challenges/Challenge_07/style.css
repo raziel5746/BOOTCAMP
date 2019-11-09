@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+}
+
+#display {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 50px;
+    width: 600px;
+    background-color: beige;
+    margin: auto;
+    margin-top: 100px;
+    border: 3px solid rgb(142, 206, 99);
+    border-radius: 105px;
+    line-height: 3rem;
+    font-size: 25px;
+    overflow: hidden;
+    color: rgb(141, 125, 52);
+    font-weight: bold;
+}
+
+button {
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+}

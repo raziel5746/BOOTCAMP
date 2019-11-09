@@ -56,37 +56,37 @@
 
 // // // Exercise 4
 
-// var lastGrade;
-// var lastCoefficient;
-// var userGrades = [];
-// var userCoefficients = [];
-// var average = 0;
+var lastGrade;
+var lastCoefficient;
+var userGrades = [];
+var userCoefficients = [];
+var average = 0;
 
-// function gradeFunction(){
-//     lastGrade = prompt("Type a grade:");
-//     userGrades.push(lastGrade);
-//     console.log("Current grades: " + userGrades);
-//     lastCoefficient = prompt("Type the coefficient:");
-//     userCoefficients.push(lastCoefficient);
-//     console.log("Current coefficients: " + userCoefficients);
-// };
+function gradeFunction(){
+    lastGrade = prompt("Type a grade:");
+    userGrades.push(lastGrade);
+    console.log("Current grades: " + userGrades);
+    lastCoefficient = prompt("Type the coefficient:");
+    userCoefficients.push(lastCoefficient);
+    console.log("Current coefficients: " + userCoefficients);
+};
 
-// function averageFunction(){
-//     if (!userGrades.length || !userCoefficients.length){
-//         alert("There are no grades or coefficients loaded.");
-//     } else {
-//         for (var i = 0; i < userGrades.length; i++) {
-//             average += userGrades[i]*userCoefficients[i];
-//         };
-//         average = average/userGrades.length;
-//         alert("The average is " + average);
-//     };
-// };
+function averageFunction(){
+    if (!userGrades.length || !userCoefficients.length){
+        alert("There are no grades or coefficients loaded.");
+    } else {
+        for (var i = 0; i < userGrades.length; i++) {
+            average += userGrades[i]*userCoefficients[i];
+        };
+        average = average/userGrades.length;
+        alert("The average is " + average);
+    };
+};
 
-// function resetFunction() {
-//     userCoefficients = [];
-//     userGrades = [];
-//     };
+function resetFunction() {
+    userCoefficients = [];
+    userGrades = [];
+    };
 
 
 // // -------------------------------------------------------------------
