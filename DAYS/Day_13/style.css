@@ -1,0 +1,16 @@
+div {
+    text-align: center;
+}
+
+#drumSet {
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.drumButton {
+    display: flex;
+    height: 80px;
+    width: 80px;
+    background-color: rgb(139, 162, 238);
+}
