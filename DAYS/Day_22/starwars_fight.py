@@ -30,15 +30,3 @@ def war():
         else:
             print("The jedis have won the battle, but not the war!\nOh, wait. They did. :Flies away:")
     print(f"There was a total of {j} fights")
-
-    # if j < 100:
-    #     war()
-
-
-    # for i in range(len(siths)):
-    #     while siths[i].loses == 0 and j < 100:
-    #         jedis[i].fight(siths[i])
-    #         j += 1
-            # if siths[i].loses:
-            #     dead = siths.pop(i)
-            #     print(f"{dead.name} died")
