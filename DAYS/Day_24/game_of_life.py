@@ -77,18 +77,11 @@ def populate_grid():
 def print_grid():
     print("\n\n")
     display = ""
-    # for i in range(len(cells)):
-    #     # print(*cells[i])
-    #     display += "".join(cells[i].i)
     for row in cells:
         for cell in row:
             display += cell.__repr__()
         display += "\n"
     print(display)
-
-        # line1 = cells[i]
-        # blah = ("".join.(line1))
-        # line1 += "\n"
 
 
 if __name__ == "__main__":

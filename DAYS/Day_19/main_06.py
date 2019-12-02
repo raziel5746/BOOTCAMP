@@ -2,6 +2,6 @@ magicians = ["David Copperfield", "Rene Lavand", "Penn and Teller", "Henry Evans
 
 def show_magicians():
     for i in range(len(magicians)):
-        print(magicians[i])
+        return(magicians[i])
 
 show_magicians()

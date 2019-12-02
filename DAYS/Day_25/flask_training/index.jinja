@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bazinga {{ name }}!</h1>
+    {% if length < 20 %}
+        <p>The length of your name is {{ length }}.</p>
+    {% else: %}
+        <p>Your name is too long.</p>
+    {% endif %}
+</body>
+</html>
