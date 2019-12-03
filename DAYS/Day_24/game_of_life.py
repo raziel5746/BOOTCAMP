@@ -15,7 +15,7 @@ def gen_grid():
 
 class Cell:
     def __init__(self, i, j):
-        self.is_alive = round(random.random()/1)
+        self.is_alive = round(random.random())
         self.live_neighbours = 0
         self.i = i
         self.j = j
@@ -25,8 +25,7 @@ class Cell:
         j = self.j
         if i > 0:
             if j > 0:
-                if cells[i-1][j-1].is_alive:
-                    self.live_neighbours += 1
+                if cells[i-1][j-1].is_alive: self.live_neighbours += 1
             if cells[i-1][j].is_alive:
                 self.live_neighbours += 1
             if j < width - 1:
@@ -62,9 +61,7 @@ class Cell:
     def __repr__(self):
         if self.is_alive:
             return ' o'
-            # return '\x1b[0;31;41m' + ' ' + '\x1b[0m'
         else:
-            # return '\x1b[0;37;47m' + ' ' + '\x1b[0m'
             return '  '
 
 string = "\x1b[0;31;41m" + "this" + "\x1b[0m"
@@ -99,4 +96,3 @@ if __name__ == "__main__":
         system('clear')
         print_grid()
         sleep(0.04166)
-        # sleep(0.065)
