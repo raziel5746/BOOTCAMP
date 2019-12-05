@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block my_block %}
+    {% for category in particles.keys() %}
+        <h3>{{ category }}</h3>
+        <ul>
+            {% for particle in particles[category] %}
+            <li> {{ particle }} </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

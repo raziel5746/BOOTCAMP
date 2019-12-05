@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block my_block %}
+    <form method='POST'>
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label }}
+        {{ form.name(size=32) }}<br>
+
+        {% if form.name.errors %}
+            <ul>
+                {% for err in form.name.errors %}
+                <li class="alert alert-danger"> {{ form.name.data }}: {{ err }} </li>
+            </ul>
+            {% endfor %}
+            <br>
+        {% endif %}
+
+        {{ form.category.label }}
+        {{ form.category(size=32) }}<br>
+
+        {% if form.category.errors %}
+            <ul>
+                {% for err in form.category.errors %}
+                <li class="alert alert-danger"> {{ form.category.label }}: {{ err }} </li>
+            </ul>
+            {% endfor %}
+        <br>
+        {% endif %}
+
+        {{ form.submit() }}
+    </form>
+{% endblock %}

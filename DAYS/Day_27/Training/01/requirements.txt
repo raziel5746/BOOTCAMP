@@ -1,0 +1,5 @@
+flask>=1.1.0
+requests>=2.22.0
+Flask-Bootstrap4>=4.0.2
+flask_wtf>=0.14.0
+wtforms>=2.2.1
