@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    padding-top: 5%;
+}
+
+.card {
+    max-width: 300px;
+}
+
+.card-body {
+    margin-bottom: 0;
+}
+
+.card-deck {
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.index-img {
+    width: 298px;
+    height: 298px;
+}
+
+#back-btn {
+    margin-top: 50px;
+    margin-left: 450px;
+    width: 150px;
+}
