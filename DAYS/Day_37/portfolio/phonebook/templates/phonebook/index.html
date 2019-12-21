@@ -1,0 +1,9 @@
+{% extends 'phonebook/base.html' %}
+{% load static %}
+
+{% block main %}
+<h1>INDEX PAGE</h1>
+<img src="{% static 'images/rock.jpg' %}", height="200" alt="A photorealistic caricature of The Rock"><br>
+
+<a href="{% url 'home' %}"><h2>Home</h2></a>
+{% endblock %}

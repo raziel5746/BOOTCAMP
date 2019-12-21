@@ -1,0 +1,42 @@
+{
+    "animal": [
+        {
+            "id": 1,
+            "legs": 4,
+            "weight": 300,
+            "height": 2.3,
+            "speed": 25,
+            "family": 1
+        },
+        {
+            "id": 2,
+            "legs": 4,
+            "weight": 0.3,
+            "height": 0.4,
+            "speed": 16,
+            "family": 2
+        },
+        {
+            "id": 3,
+            "legs": 8,
+            "weight": 0.03,
+            "height": 0.003,
+            "speed": 0.1,
+            "family": 3
+        }
+    ],
+    "family": [
+        {
+            "id": 1,
+            "name": "mammal"
+        },
+        {
+            "id": 2,
+            "name": "reptile"
+        },
+        {
+            "id": 3,
+            "name": "arachnid"
+        }
+    ]
+}
