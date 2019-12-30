@@ -52,9 +52,6 @@ def add_rental(request, customer):
 
     else:
         form = AddRentalForm(my_customer=customer)
-        # my_id_int = 0
-        # if type(my_id) is int:
-        #     my_id_int = my_id
         passed_from_views = {'form': form,
                              'customer': customer}
 
@@ -75,10 +72,9 @@ def customers(request):
 
 
 def customers_search(request):
-    if request.method == 'GET':
-            search = request.GET
-            print(search)
-    customers = Customer.objects.order_by('last_name', 'first_name')
+    if request.method == 'POST':
+            search = request.POST.get('search', default=None)
+            customers = Customer.objects.filter(last_name=search)
     return render(request, 'rent/customers.html', {'customers': customers})
 
 
@@ -144,7 +140,6 @@ def addvehicle(request):
 
             new_vehicle.save()
             new_vehicle_id = new_vehicle.id
-            print(new_vehicle_id)
             return HttpResponseRedirect(reverse('myvehicle', kwargs={'id': new_vehicle_id}))
     else:
         form = AddVehicleForm()

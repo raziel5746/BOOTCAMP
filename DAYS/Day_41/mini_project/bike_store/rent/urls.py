@@ -5,7 +5,6 @@ urlpatterns = [
     path('', views.home, name='rental-home'),
     path('rentals/', views.rentals, name='rentals'),
     path('rental/<int:id>', views.myrental, name='myrental'),
-    # path('rental/add', views.add_rental, name='addrental'),
     path('rental/add/<int:customer>', views.add_rental, name='addrental'),
     path('rental/return/<int:id>', views.return_vehicle, name='returnvehicle'),
 
