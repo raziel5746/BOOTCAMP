@@ -18,11 +18,15 @@ from django.urls import path, include
 from . import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic.base import TemplateView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('account/', include('account.urls')),
     path('tradecenter/', include('tradecenter.urls')),
+    path('account/', include('account.urls')),
+    path('account/', include('django.contrib.auth.urls')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

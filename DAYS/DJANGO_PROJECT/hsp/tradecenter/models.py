@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Card(models.Model):
@@ -29,19 +30,25 @@ class Deck(models.Model):
         return(f"Deck belonging to {self.user}")
 
 
-class Transactions(models.Model):
+class Transaction(models.Model):
 
     CURRENCY = [
         ('CARD', 'Card'),
         ('CREDITS', 'Credits'),
     ]
 
-    seller = models.ForeignKey(User, on_delete=models.CASCADE)
-    buyer = models.ForeignKey(User, on_delete=models.CASCADE)
+    STATUS = [
+        ('PENDING', 'Pending'),
+        ('EXECUTED', 'Executed'),
+    ]
+
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name='transactions')
+    buyer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='buyers')
     card_bought = models.ForeignKey(Card, on_delete=models.CASCADE)
     currency = models.CharField(max_length=7,
                                 choices=CURRENCY,
                                 default='CARD')
-    currency_amount =
-    status = 
-    pass
+    currency_amount = models.SmallIntegerField()
+    status = models.CharField(max_length=8,
+                                choices=STATUS,
+                                default='PENDING')
