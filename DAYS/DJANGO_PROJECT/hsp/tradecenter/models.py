@@ -27,3 +27,21 @@ class Deck(models.Model):
 
     def __str__(self):
         return(f"Deck belonging to {self.user}")
+
+
+class Transactions(models.Model):
+
+    CURRENCY = [
+        ('CARD', 'Card'),
+        ('CREDITS', 'Credits'),
+    ]
+
+    seller = models.ForeignKey(User, on_delete=models.CASCADE)
+    buyer = models.ForeignKey(User, on_delete=models.CASCADE)
+    card_bought = models.ForeignKey(Card, on_delete=models.CASCADE)
+    currency = models.CharField(max_length=7,
+                                choices=CURRENCY,
+                                default='CARD')
+    currency_amount =
+    status = 
+    pass
