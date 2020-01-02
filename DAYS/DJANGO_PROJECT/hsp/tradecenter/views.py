@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from tradecenter.populator import populate_cards, populate_images, delete_cards_without_image, delete_heroe_powers, insert_image_into_card
+from . import populator
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from .models import *
+from django.db.models import Max, Min
+from random import randint
 
 
 def cards_populator(request):
@@ -30,3 +35,39 @@ def image_to_card(request):
     insert_image_into_card()
     message = {'message': "Images added to cards"}
     return render(request, 'tradecenter/populator.html', message)
+
+
+def home(request):
+    return render(request, 'tradecenter/home.html')
+
+
+def get_random(Model):
+
+    # min_id = Model.objects.all().aggregate(min_id=Min("id"))['min_id']
+    max_id = Model.objects.all().aggregate(max_id=Max("id"))['max_id']
+    while True:
+        pk = randint(1, max_id)
+        record = Model.objects.filter(pk=pk).first()
+        if record:
+            return record
+
+
+@login_required
+def redeem30(request):
+    user = request.user
+    if not user.usercard_set.all():
+        for i in range(30):
+            card = get_random(Card)
+            if user.usercard_set.filter(card=card).exists():
+                card_to_add = user.usercard_set.get(card=card)
+                card_to_add.amount += 1
+                card_to_add.save()
+                print("Card added!")
+            else:
+                card_to_add = user.usercard_set.create(card=card)
+                print("Card added!")
+                card_to_add.save()
+    else:
+        print("AAAAAAAAAAAAAAAAAA | User already redeemed cards")
+    print("BBBBBBBBBBBBBBBBB | ", user)
+    return render(request, 'tradecenter/home.html')

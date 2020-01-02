@@ -23,3 +23,8 @@ def signup(request):
 def user_factory(request, num):
     factory.fake_user(num)
     return render(request, 'account/user_factory.html')
+
+
+def populate_users_with_cards(request):
+    factory.add_cards()
+    return render(request, 'account/user_factory.html')

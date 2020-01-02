@@ -14,20 +14,21 @@ class Card(models.Model):
         return(f"{self.title}")
 
 
-class UserCard(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    card = models.ForeignKey(Card, on_delete=models.CASCADE)
-    amount = models.PositiveSmallIntegerField()
-
-    def __str__(self):
-        return(f"{self.amount}x{self.card} - {self.user}")
-
-
 class Deck(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return(f"Deck belonging to {self.user}")
+
+
+class UserCard(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    card = models.ForeignKey(Card, on_delete=models.CASCADE)
+    amount = models.PositiveSmallIntegerField(default=1)
+    # deck = models.ForeignKey(Deck, blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return(f"{self.amount} x {self.card} - {self.user}")
 
 
 class Transaction(models.Model):
