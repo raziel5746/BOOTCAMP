@@ -8,6 +8,8 @@ urlpatterns = [
     path('populator/hp_deleter/', views.heroe_powers_deleter, name='images-deleter'),
     path('populator/image_to_card/', views.image_to_card, name='image-to-card'),
 
+    path('', views.home, name='tradecenter-home'),
     path('home/', views.home, name='tradecenter-home'),
     path('redeem30/', views.redeem30, name='redeem30'),
+    path('my_cards/', views.my_cards, name='my-cards'),
 ]

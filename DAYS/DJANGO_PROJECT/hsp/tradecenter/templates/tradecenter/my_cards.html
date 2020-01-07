@@ -1,0 +1,8 @@
+{% extends 'tradecenter/base.html' %}
+{% block content %}
+    <div class="card-deck d-flex flex-wrap">
+        {% for card in cards %}
+            <div class="card shadow rounded p-3 m-4" style="width: 300px; flex: 0 0 300px;"><img src="{{ card.card.image.url }}" alt="{{ card.card.title }}"></div>
+        {% endfor %}
+    </div>
+{% endblock content %}

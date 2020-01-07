@@ -1,8 +1,13 @@
 {% extends 'tradecenter/base.html' %}
 
 {% block content %}
+<a href="{% url 'logout' %}">Logout</a>
 <h1>Hello {{ user.username }}!</h1>
-<h3>Redeem your 30 cards for free now!</h3>
-<br>
+{% if redeem_cards %}
+    <h3>Redeem your 30 cards for free now!</h3>
+    <br>
     <a href="{% url 'redeem30' %}" class="btn btn-primary btn-large"> Redeem my 30 cards!</a>
+{% else %}
+    <a href="{% url 'my-cards' %}" class="btn btn-primary btn-lg shadow">My cards</a>
+{% endif %}
 {% endblock content %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import populator
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -38,7 +38,12 @@ def image_to_card(request):
 
 
 def home(request):
-    return render(request, 'tradecenter/home.html')
+    if not request.user.usercard_set.all():
+        redeem_cards = True
+    else:
+        redeem_cards = False
+    redeem = {'redeem_cards': redeem_cards}
+    return render(request, 'tradecenter/home.html', redeem)
 
 
 def get_random(Model):
@@ -62,12 +67,14 @@ def redeem30(request):
                 card_to_add = user.usercard_set.get(card=card)
                 card_to_add.amount += 1
                 card_to_add.save()
-                print("Card added!")
             else:
                 card_to_add = user.usercard_set.create(card=card)
-                print("Card added!")
                 card_to_add.save()
-    else:
-        print("AAAAAAAAAAAAAAAAAA | User already redeemed cards")
-    print("BBBBBBBBBBBBBBBBB | ", user)
-    return render(request, 'tradecenter/home.html')
+    return redirect('tradecenter-home')
+
+
+def my_cards(request):
+    user_cards = request.user.usercard_set.all()
+    print(user_cards)
+    cards = {'cards': user_cards}
+    return render(request, 'tradecenter/my_cards.html', cards)

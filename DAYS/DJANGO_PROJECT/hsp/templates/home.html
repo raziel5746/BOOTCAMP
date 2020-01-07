@@ -3,14 +3,21 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-  <p>You are not logged in:</p>
-  <a href="{% url 'login' %}">login</a>
-  <br>
-  <p>Or sign up:</p>
-  <a href="{% url 'signup' %}">sign up</a>
-{% endif %}
+<div class="container">
+  {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p><a href="{% url 'logout' %}">logout</a></p>
+    <br>
+    <br>
+    <a href="{% url 'tradecenter-home' %}">Tradecenter</a>
+  {% else %}
+    <p>You are not logged in:</p>
+    <a href="{% url 'login' %}">login</a>
+    <br>
+    <br>
+    <br>
+    <p>Or sign up:</p>
+    <a href="{% url 'signup' %}">sign up</a>
+  {% endif %}
+</div>
 {% endblock %}
